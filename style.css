@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+:root {
+    --bg-main: #fff;
+    --text-default: rgba(0, 0, 0, 0.5);
+    --text-accent: #5e5e5e;
+}
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 255, 136, 0.308);
+    border: 5px inset #00fff2;
+}
+
+.navigation ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+}
+
+.navigation li + li {
+    margin-left: 0.5rem;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--text-accent);
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+h1 {
+    font: 5em sans-serif;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 2em;
+    grid-gap: 5em;
+    list-style: none;
+    font-size: 2em;
+}
+
+.list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+}
