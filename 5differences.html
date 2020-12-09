@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 differences</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        let count = 0;
+
+        function clicked(element) {
+            console.log(element);
+            element.style.display = "none";
+
+            count++;
+            if(count === 5){
+                count = 0;
+                alert("Поздравляем, вы победили!");
+            }
+        }
+    </script>
 </head>
 <body>
     <header class="header">
+        <p class="game__name">5 отличий</p>
         <nav class="navigation">
             <ul>
                 <li><a class="link" href="index.html">Main Menu</a></li>
@@ -16,7 +31,17 @@
         </nav>
     </header>
     <main>
-        
+        <p>Найти 5 отличий на второй картинке!</p>
+        <div class="image__box">
+            <div class="image1"></div>
+            <div class="image2">
+                <img class="difference" id="one" src="igrushka.jpg" alt="" onclick="clicked(one)">
+                <img class="difference" id="two" src="igrushka.jpg" alt="" onclick="clicked(two)">
+                <img class="difference" id="three" src="igrushka.jpg" alt="" onclick="clicked(three)">
+                <img class="difference" id="four" src="igrushka.jpg" alt="" onclick="clicked(four)">
+                <img class="difference" id="five" src="igrushka.jpg" alt="" onclick="clicked(five)">
+            </div>
+        </div>
     </main>
     <footer class="footer"></footer>
 </body>
