@@ -48,6 +48,31 @@ body {
     font-weight: bold;
 }
 
+.link__game {
+    background-color:  rgba(0, 255, 136, 0.308);
+    border-radius: 10%;
+    box-shadow:
+    1px 1px #53ea93,
+    2px 2px #53ea93,
+    3px 3px #53ea93,
+    4px 4px #53ea93;
+  -webkit-transform: translateX(-2px);
+  transform: translateX(-2px)
+}
+
+.link__game:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow:
+    -1px -1px white,
+    -2px -2px white,
+    -3px -3px white,
+    -4px -4px white;
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px)
+}
+
 main {
     display: flex;
     flex-flow: column nowrap;
