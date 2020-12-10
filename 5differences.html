@@ -9,8 +9,21 @@
         let count = 0;
 
         function clicked(element) {
-            console.log(element);
-            element.style.display = "none";
+            let start = Date.now();
+
+            let timer = setInterval(function() {
+                let timePassed = Date.now() - start;
+                if (element.getBoundingClientRect().top > window.screen.height) {
+                clearInterval(timer); 
+                element.style.display = "none";
+                return;
+            }
+            draw(timePassed);
+            }, 20);
+
+            function draw(timePassed) {
+                 element.style.top = element.getBoundingClientRect().top  + 'px';
+            }
 
             count++;
             if(count === 5){
