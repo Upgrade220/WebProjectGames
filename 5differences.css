@@ -50,10 +50,12 @@ dialog div{
 #finalButton{
     position: absolute;
     bottom: 0; 
+    padding: 0;
+    margin: 0;
     color: white;
     width: 100%;
-    border: none;
     background-color: black;
+    border: none;
 }
 
 #finalButton h1, h2 {
