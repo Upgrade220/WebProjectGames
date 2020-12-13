@@ -1,38 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 differences</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        let count = 0;
-
-        function clicked(element) {
-            let start = Date.now();
-
-            let timer = setInterval(function() {
-                let timePassed = Date.now() - start;
-                if (element.getBoundingClientRect().top > window.screen.height) {
-                clearInterval(timer); 
-                element.style.display = "none";
-                return;
-            }
-            draw(timePassed);
-            }, 20);
-
-            function draw(timePassed) {
-                 element.style.top = element.getBoundingClientRect().top  + 'px';
-            }
-
-            count++;
-            if(count === 5){
-                count = 0;
-                alert("Поздравляем, вы победили!");
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="5differences.css">
 </head>
+
 <body>
     <header class="header">
         <p class="game__name">5 отличий</p>
@@ -46,16 +22,23 @@
     <main>
         <p>Найти 5 отличий на второй картинке!</p>
         <div class="image__box">
-            <div class="image1"></div>
-            <div class="image2">
-                <img class="difference" id="one" src="igrushka.jpg" alt="" onclick="clicked(one)">
-                <img class="difference" id="two" src="igrushka.jpg" alt="" onclick="clicked(two)">
-                <img class="difference" id="three" src="igrushka.jpg" alt="" onclick="clicked(three)">
-                <img class="difference" id="four" src="igrushka.jpg" alt="" onclick="clicked(four)">
-                <img class="difference" id="five" src="igrushka.jpg" alt="" onclick="clicked(five)">
+            <div class="imagebg"></div>
+            <div class="imagebg" id="elka">
+                <img class="difference" id="toy0" alt="" onclick="clicked(toy0)">
+                <img class="difference" id="toy1" alt="" onclick="clicked(toy1)">
+                <img class="difference" id="toy2" alt="" onclick="clicked(toy2)">
+                <img class="difference" id="toy3" alt="" onclick="clicked(toy3)">
+                <img class="difference" id="toy4" alt="" onclick="clicked(toy4)">
             </div>
         </div>
     </main>
     <footer class="footer"></footer>
+    <dialog>
+        <div>
+        <button id="finalButton"><h1>Вы выйграли</h1><h2>ладно</h2></button>
+        </div>
+    </dialog>
+    <script src="5differences.js"></script>
 </body>
+
 </html>
