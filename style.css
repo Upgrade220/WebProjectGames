@@ -106,3 +106,10 @@ h1 {
     align-items: center;
     font-family: cursive;
 }
+
+.game__name{
+    position: absolute;
+    left: 35px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+}

@@ -1,0 +1,22 @@
+.game__field{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin: 15px auto;
+    padding: 10px;
+    background-color:LightPink;
+    border: 4px solid MediumVioletRed;
+    border-radius: 4px;
+}
+
+.game__cell{
+    border: 2px solid Plum;
+    border-radius: 2px;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: PeachPuff;
+}
