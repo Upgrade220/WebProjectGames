@@ -54,7 +54,7 @@ function flipCard(card) {
     }
 }
 
-function intialiseGame() {
+function initializeGame() {
     let i = 0;
     while (cards.includes(undefined)) {
         let firstPlaced = false;
@@ -100,4 +100,4 @@ function endGame() {
     initializeGame();
 }
 
-intialiseGame();
+initializeGame();
