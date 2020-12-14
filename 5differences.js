@@ -2,22 +2,29 @@ let count = 0;
 const dialog = document.querySelector('dialog');
 const finalButton = document.getElementById('finalButton');
 
-const finalAudio = new Audio('Cyberpunk-2077.mp3');
+const finalAudio = new Audio('5differences/Cyberpunk-2077.mp3');
 finalAudio.volume = 0.2;
 
-const bgAudio = new Audio('19-2000.mp3');
+const bgAudio = new Audio('5differences/19-2000.mp3');
 bgAudio.volume = 0.1;
+bgAudio.loop = true;
+
+document.querySelector('.game__meme').addEventListener('click', () => toggleAudio(bgAudio));
+
+function toggleAudio(audio) {
+    if (audio.paused) {
+        audio.play();
+    }
+    else {
+        audio.pause();
+    }
+}
 
 const toysPositions = [[70, 349, 70, 100],
 [100, 340, 100, 130],
 [140, 290, 170, 230],
 [170, 240, 230, 300],
 [189, 233, 300, 399]]
-
-bgAudio.addEventListener('ended', function () {
-    this.currentTime = 0;
-    this.play();
-}, false);
 
 function clicked(element) {
     let start = Date.now();
@@ -56,12 +63,12 @@ function getRandomNum(min, max) {
 function initializeGame() {
     let elki = document.getElementsByClassName("imagebg");
     for (let elka of elki) {
-        elka.style.backgroundImage = "url('" + getRandomImage("elka", "jpg", 1) + "')";
+        elka.style.backgroundImage = "url('5differences/" + getRandomImage("elka", "jpg", 1) + "')";
     }
 
     for (let i = 0; i < 5; i++) {
         let toy = document.getElementById(`toy${i}`);
-        toy.src = getRandomImage("igrushka", "png", 5);
+        toy.src = '5differences/' + getRandomImage("igrushka", "png", 5);
         toy.style.display = '';
         toy.style.top = '';
         toy.style.left = getRandomNum(toysPositions[i][0], toysPositions[i][1]) + "px";

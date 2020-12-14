@@ -19,8 +19,9 @@
         </nav>
     </header>
     <main>
-        <h2>Найди пары</h2>
-        <p>Переворачивай карточки собирая пары.</p>
+        <div class="game__header">
+            <p>Переворачивай карточки собирая пары.</p>
+        </div>
         <div class="game__field">
             <div class="game__cell" id="cell0" onclick="flipCard('cell0')"></div>
             <div class="game__cell" id="cell1" onclick="flipCard('cell1')"></div>
@@ -43,6 +44,17 @@
             <div class="game__cell" id="cell18" onclick="flipCard('cell18')"></div>
             <div class="game__cell" id="cell19" onclick="flipCard('cell19')"></div>
         </div>
+        <div class="game__meme">
+            <img src="memory/candyland.gif" alt="running cat">
+        </div>
+        <dialog>
+            <video id="finalVideo">
+                <source src="memory/ng_pripev.mp4" type="video/mp4">
+            </video>
+            <button id="finalButton">
+                <h1>Вы выйграли</h1>
+            </button>
+        </dialog>
     </main>
     <footer class="footer"></footer>
     <script src="memory.js"></script>

@@ -1,3 +1,9 @@
+const dialog = document.querySelector('dialog');
+const finalButton = document.getElementById('finalButton');
+const finalVideo = document.getElementById('finalVideo');
+finalVideo.volume = 0.2;
+finalVideo.loop = true;
+
 let cards = new Array(20);
 let cardsIndexes = new Array(20).fill(0);
 let test = new Array(20).fill(0);
@@ -6,6 +12,21 @@ let firstCard = null;
 let firstCardIndex = null;
 let turn = 1;
 let totalPairs = 0;
+
+const bgAudio = new Audio('memory/candyland.mp3');
+bgAudio.volume = 0.1;
+bgAudio.loop = true;
+
+document.querySelector('.game__meme').addEventListener('click', () => toggleAudio(bgAudio));
+
+function toggleAudio(audio) {
+    if (audio.paused) {
+        audio.play();
+    }
+    else {
+        audio.pause();
+    }
+}
 
 function randomInteger(max) {
     let rand = Math.random() * (max + 1);
@@ -89,15 +110,26 @@ function initializeGame() {
 
     setTimeout(hideCards, 3000);
 
+    bgAudio.play();
+
     firstCard = null;
     firstCardIndex = null;
     turn = 1;
     totalPairs = 0;
 }
 
-function endGame() {
-    alert('finish');
+finalButton.addEventListener('click', function () {
+    dialog.close();
+    finalVideo.pause();
+    finalVideo.currentTime = 0.0;
     initializeGame();
+})
+
+function endGame() {
+    bgAudio.pause();
+    bgAudio.currentTime = 0.0;
+    dialog.show();
+    finalVideo.play();
 }
 
 initializeGame();
