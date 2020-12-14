@@ -63,12 +63,12 @@ function getRandomNum(min, max) {
 function initializeGame() {
     let elki = document.getElementsByClassName("imagebg");
     for (let elka of elki) {
-        elka.style.backgroundImage = "url('5differences/" + getRandomImage("elka", "jpg", 1) + "')";
+        elka.style.backgroundImage = "url('5differences/" + getRandomImage("elka", "webp", 1) + "')";
     }
 
     for (let i = 0; i < 5; i++) {
         let toy = document.getElementById(`toy${i}`);
-        toy.src = '5differences/' + getRandomImage("igrushka", "png", 5);
+        toy.src = '5differences/' + getRandomImage("igrushka", "webp", 5);
         toy.style.display = '';
         toy.style.top = '';
         toy.style.left = getRandomNum(toysPositions[i][0], toysPositions[i][1]) + "px";

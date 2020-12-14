@@ -51,6 +51,8 @@ dialog {
     transform: translate(-50%, -50%);
     width: 480px;
     height: 480px;
+    border: 10px solid PaleVioletRed;
+    border-radius: 8px;
 }
 
 #finalButton{

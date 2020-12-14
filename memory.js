@@ -43,13 +43,13 @@ function showCard(card) {
 function hideCards() {
     let cells = document.querySelectorAll('.game__cell');
     for (let cell of cells) {
-        cell.style.backgroundImage = 'url(memory/bg.png)'
+        cell.style.backgroundImage = 'url(memory/bg.webp)'
     }
 }
 
 function flipCard(card) {
     let cardEl = document.getElementById(card);
-    if (cardEl.style.backgroundImage === `url("memory/bg.png")`) {
+    if (cardEl.style.backgroundImage === `url("memory/bg.webp")`) {
         let index = showCard(card);
         if (turn === 1) {
             firstCard = card;
@@ -60,8 +60,8 @@ function flipCard(card) {
             if (firstCardIndex !== cardsIndexes[index]) {
                 let fCardEl = document.getElementById(firstCard);
                 setTimeout(function () {
-                    fCardEl.style.backgroundImage = 'url(memory/bg.png)';
-                    cardEl.style.backgroundImage = 'url(memory/bg.png)';
+                    fCardEl.style.backgroundImage = 'url(memory/bg.webp)';
+                    cardEl.style.backgroundImage = 'url(memory/bg.webp)';
                 }, 1000)
             }
             else {
@@ -82,7 +82,7 @@ function initializeGame() {
         while (!firstPlaced) {
             let randInt1 = randomInteger(19);
             if (cards[randInt1] === undefined) {
-                cards[randInt1] = `item${i}.png`;
+                cards[randInt1] = `item${i}.webp`;
                 cardsIndexes[randInt1] = i;
                 firstPlaced = true;
             }
@@ -91,7 +91,7 @@ function initializeGame() {
         while (!secondPlaced) {
             let randInt2 = randomInteger(19);
             if (cards[randInt2] === undefined) {
-                cards[randInt2] = `item${i}.png`;
+                cards[randInt2] = `item${i}.webp`;
                 cardsIndexes[randInt2] = i;
                 secondPlaced = true;
             }
